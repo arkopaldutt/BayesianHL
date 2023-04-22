@@ -1,5 +1,5 @@
 # BayesianHL
-(Code on Bayesian Hamiltonian Learning accompanying "Active Learning of Quantum System Hamiltonians yields Query Advantage")
+(Code on Hamiltonian Learning with a Bayesian estimator accompanying "[Active Learning of Quantum System Hamiltonians yields Query Advantage](https://arxiv.org/abs/2112.14553)")
 
 We consider the problem of learning the cross-resonance (CR) Hamiltonian. We compare the batch-mode active learning algorithm for Hamiltonian learning based on Fisher information
 ([HAL-FI](https://github.com/arkopaldutt/HAL)) against the sequential active learning algorithm defined in [Qinfer](https://arxiv.org/abs/1610.00336). We use the Bayesian estimator of sequential
@@ -9,15 +9,15 @@ maximum likelihood estimation and regression.
 ## Code design
 
 The structure of the code in `bayesianhl` is as follows
-* `quantum_device_models.py`
-* `quantum_device_oracle.py`
-* `qinfer_system_models.py` defines simpler Hamiltonian learning models on which different methods from this repo can be tested on
-* `qinfer_cr_hamiltonians.py` defines the CR Hamiltonian in the presence and absence of different noise sources 
-* `action_space.py` 
-* `design_experiment.py`
-* 
-* `active_bayesian_learner.py` 
-* `qinfer_bayesian_learner.py` 
+* `quantum_device_models.py` (used with HAL-FI) defines models of the CR Hamiltonians in presence and absence of noise
+* `quantum_device_oracle.py` (used with HAL-FI) describes how to set up different simulators based on  
+* `qinfer_system_models.py` (used with Qinfer) defines simpler Hamiltonian learning models on which different methods from this repo can be tested on
+* `qinfer_cr_hamiltonians.py` (used with Qinfer) defines the CR Hamiltonian in the presence and absence of different noise sources 
+* `action_space.py` (used with HAL-FI+Qinfer)
+* `design_experiment.py` (used with HAL-FI) defines evaluation and optimization of query distributions
+* `bayes_risk_heuristic.py` (used with Qinfer) defines methods for evaluation of Bayes Risk considering the query space over experiments allowed on CR Hamiltonians 
+* `active_bayesian_learner.py` (used with HAL-FI) defines learning experiments on the simulator
+* `qinfer_bayesian_learner.py` (used with Qinfer) defines learning experiments on the simulator
 
 Additionally, the `cases` directory includes the following Jupyter notebooks that demonstrate usage of the code:
 * `demo_hamiltonian_learning.ipynb` describes how to define different CR-like Hamiltonians and run passive learning experiments on them
@@ -36,7 +36,7 @@ includes additional dependencies of mosek, cvxopt, and cvxpy, that are required 
 
 ### Note
 The code accompanying our [paper](https://arxiv.org/abs/2112.14553) is divided into two repos of [BayesianHL]() and [HAL](https://github.com/arkopaldutt/HAL) as
-the former has slightly different dependencies to use the methods from [Qinfer](https://github.com/QInfer/python-qinfer).
+the former has different dependencies and requires an older Python version to use the methods from [Qinfer](https://github.com/QInfer/python-qinfer).
 
 ## Citing this repository
 
