@@ -13,7 +13,7 @@ The structure of the code in `bayesianhl` is as follows
 * `quantum_device_oracle.py` (used with HAL-FI) describes how to set up different simulators based on  
 * `qinfer_system_models.py` (used with Qinfer) defines simpler Hamiltonian learning models on which different methods from this repo can be tested on
 * `qinfer_cr_hamiltonians.py` (used with Qinfer) defines the CR Hamiltonian in the presence and absence of different noise sources 
-* `action_space.py` (used with HAL-FI+Qinfer)
+* `action_space.py` (used with HAL-FI+Qinfer) defines the queries/experiments allowed on the CR Hamiltonian
 * `design_experiment.py` (used with HAL-FI) defines evaluation and optimization of query distributions
 * `bayes_risk_heuristic.py` (used with Qinfer) defines methods for evaluation of Bayes Risk considering the query space over experiments allowed on CR Hamiltonians 
 * `active_bayesian_learner.py` (used with HAL-FI) defines learning experiments on the simulator
