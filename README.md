@@ -35,7 +35,7 @@ if you want to run experiments in learning the CR Hamiltonian with HAL-FI combin
 includes additional dependencies of mosek, cvxopt, and cvxpy, that are required by HAL-FI.
 
 ### Note
-The code accompanying our [paper](https://arxiv.org/abs/2112.14553) is divided into two repos of [BayesianHL]() and [HAL](https://github.com/arkopaldutt/HAL) as
+The code accompanying our [paper](https://arxiv.org/abs/2112.14553) is divided into two repos of [BayesianHL](https://github.com/arkopaldutt/BayesianHL) and [HAL](https://github.com/arkopaldutt/HAL) as
 the former has different dependencies and requires an older Python version to use the methods from [Qinfer](https://github.com/QInfer/python-qinfer).
 
 ## Citing this repository
